@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KisanAI Sahayak - किसान AI सहायक</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="floating-leaf leaf1">🌿</div>
+        <div class="floating-leaf leaf2">🍃</div>
+        <div class="floating-leaf leaf3">🌾</div>
+        <div class="floating-leaf leaf4">🌱</div>
+        <div class="floating-leaf leaf5">🌿</div>
+        <div class="floating-leaf leaf6">🍃</div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header Section -->
+        <header class="hero-section">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h1 class="main-title">
+                        <span class="gradient-text">KisanAI</span> 
+                        <span class="hindi-text">सहायक</span>
+                    </h1>
+                </div>
+                <p class="subtitle">
+                    <i class="fas fa-robot"></i>
+                    आपकी फसल की बीमारी पहचानें और तुरंत समाधान पाएं
+                </p>
+                <div class="feature-badges">
+                    <span class="badge"><i class="fas fa-camera"></i> Photo Analysis</span>
+                    <span class="badge"><i class="fas fa-microphone"></i> Voice Support</span>
+                    <span class="badge"><i class="fas fa-brain"></i> AI Powered</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Upload Section -->
+        <div class="upload-wrapper">
+            <!-- Step Indicator -->
+            <div class="steps-indicator">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-text">फोटो अपलोड करें</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-text">सवाल रिकॉर्ड करें</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-text">समाधान पाएं</div>
+                </div>
+            </div>
+
+            <!-- Upload Cards -->
+            <div class="upload-cards">
+                <!-- Photo Upload Card -->
+                <div class="card photo-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>📸 फसल की फोटो अपलोड करें</h3>
+                        <p>अपनी फसल की साफ़ तस्वीर लें जिसमें समस्या दिख रही हो</p>
+                    </div>
+                    <div class="upload-area" id="photoUploadArea">
+                        <input type="file" id="photoInput" accept="image/*" hidden>
+                        <div class="upload-placeholder" id="uploadPlaceholder">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>क्लिक करें या फोटो यहाँ drag करें</p>
+                            <span>JPG, PNG, WEBP (Max 10MB)</span>
+                        </div>
+                        <div class="image-preview" id="imagePreview" style="display:none;">
+                            <img id="previewImage" alt="Preview">
+                            <div class="image-actions">
+                                <button class="btn-remove" id="removeImage">
+                                    <i class="fas fa-times"></i> हटाएं
+                                </button>
+                                <div class="image-info" id="imageInfo"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audio Recording Card -->
+                <div class="card audio-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3>🎤 अपना सवाल रिकॉर्ड करें</h3>
+                        <p>अपनी भाषा में फसल के बारे में सवाल पूछें</p>
+                    </div>
+                    <div class="audio-section">
+                        <div class="recording-controls">
+                            <button id="recordBtn" class="btn-record">
+                                <i class="fas fa-microphone"></i>
+                                <span>रिकॉर्डिंग शुरू करें</span>
+                            </button>
+                            <button id="stopBtn" class="btn-stop" disabled>
+                                <i class="fas fa-stop"></i>
+                                <span>रिकॉर्डिंग बंद करें</span>
+                            </button>
+                        </div>
+                        
+                        <div class="recording-visualizer" id="recordingVisualizer" style="display:none;">
+                            <div class="sound-wave">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                            <span class="recording-time" id="recordingTime">00:00</span>
+                        </div>
+
+                        <div class="audio-preview" id="audioPreview" style="display:none;">
+                            <audio controls id="audioPlayer"></audio>
+                            <button class="btn-re-record" id="reRecordBtn">
+                                <i class="fas fa-redo"></i> दोबारा रिकॉर्ड करें
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Section -->
+            <div class="submit-section">
+                <button id="submitBtn" class="submit-btn" disabled>
+                    <div class="btn-content">
+                        <i class="fas fa-magic"></i>
+                        <span>AI से समाधान पाएं</span>
+                        <div class="btn-shine"></div>
+                    </div>
+                </button>
+                <p class="submit-note">
+                    <i class="fas fa-info-circle"></i>
+                    यह AI-generated सुझाव है। गंभीर समस्या के लिए कृषि विशेषज्ञ से सलाह लें।
+                </p>
+            </div>
+        </div>
+
+        <!-- Loading Section -->
+        <div id="loadingSection" class="loading-section" style="display:none;">
+            <div class="loading-content">
+                <div class="loading-animation">
+                    <div class="plant-growing">
+                        <div class="stem"></div>
+                        <div class="leaf leaf-1"></div>
+                        <div class="leaf leaf-2"></div>
+                        <div class="leaf leaf-3"></div>
+                    </div>
+                </div>
+                <h3>AI आपकी फसल का विश्लेषण कर रहा है...</h3>
+                <div class="loading-steps">
+                    <div class="loading-step active">📸 तस्वीर का विश्लेषण</div>
+                    <div class="loading-step">🎤 आवाज की पहचान</div>
+                    <div class="loading-step">🧠 समाधान तैयार कर रहे हैं</div>
+                    <div class="loading-step">🔊 आवाज में जवाब बना रहे हैं</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultSection" class="result-section" style="display:none;">
+            <div class="result-header">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>🎉 आपके फसल का समाधान तैयार है!</h2>
+            </div>
+            
+            <div class="result-content">
+                <div class="disease-info" id="diseaseInfo">
+                    <h3>🔍 पहचानी गई समस्या</h3>
+                    <div class="disease-name" id="diseaseName"></div>
+                    <div class="confidence-meter">
+                        <span>विश्वसनीयता:</span>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="confidenceFill"></div>
+                        </div>
+                        <span id="confidenceText">95%</span>
+                    </div>
+                </div>
+
+                <div class="solution-content">
+                    <div class="solution-tabs">
+                        <button class="tab-btn active" data-tab="text">
+                            <i class="fas fa-file-text"></i> पढ़ें
+                        </button>
+                        <button class="tab-btn" data-tab="audio">
+                            <i class="fas fa-volume-up"></i> सुनें
+                        </button>
+                    </div>
+
+                    <div class="tab-content active" id="textTab">
+                        <div class="solution-text" id="solutionText"></div>
+                    </div>
+
+                    <div class="tab-content" id="audioTab">
+                        <div class="audio-player-custom">
+                            <audio id="solutionAudio" controls></audio>
+                            <div class="audio-controls">
+                                <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+                                <div class="audio-progress">
+                                    <div class="progress-track">
+                                        <div class="progress-current"></div>
+                                    </div>
+                                </div>
+                                <span class="audio-time">0:00 / 0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <button class="btn-secondary" id="shareBtn">
+                        <i class="fas fa-share"></i> Share करें
+                    </button>
+                    <button class="btn-secondary" id="downloadBtn">
+                        <i class="fas fa-download"></i> Download करें
+                    </button>
+                    <button class="btn-primary" id="newAnalysisBtn">
+                        <i class="fas fa-plus"></i> नया विश्लेषण करें
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p><i class="fas fa-heart"></i> किसानों के लिए बनाया गया</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">1000+</span>
+                        <span class="stat-label">खुश किसान</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5000+</span>
+                        <span class="stat-label">फसल विश्लेषण</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">सटीकता</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
