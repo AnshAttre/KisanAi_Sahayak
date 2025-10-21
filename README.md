@@ -1,108 +1,145 @@
-# 🌾 KisanAI Sahayak - AI-Powered Crop Disease Detection
+# KisanAI Sahayak 🌾
 
-<div align="center">
+**Ek AI-powered krishi sahayak jo Bhartiya kisanon ko photo aur sthaniya bhasha mein voice command ka upyog karke fasal ki bimariyon ka pata lagane mein madad karta hai.**
 
-![KisanAI Banner](https://via.placeholder.com/800x200/2E7D32/FFFFFF?text=KisanAI+Sahayak+-+AI+for+Farmers)
-
-[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://github.com/yourusername/kisanai-sahayak)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
-[![Flask](https://img.shields.io/badge/Flask-2.3.3-green.svg)](https://flask.palletsprojects.com/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.13.0-orange.svg)](https://tensorflow.org)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-**An AI-powered web application that helps Indian farmers identify crop diseases through photos and receive instant solutions in Hindi.**
-
-[🚀 Live Demo](https://kisanai-sahayak.herokuapp.com) | [📖 Documentation](docs/) | [🎥 Video Demo](https://youtube.com/watch?v=demo) | [📊 Report](report.pdf)
-
-</div>
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
+![Flask](https://img.shields.io/badge/Flask-2.3-green.svg)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.13-orange.svg)
+![Gemini AI](https://img.shields.io/badge/Gemini_AI-Google-brightgreen.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ---
 
-## 🎯 **Problem Statement**
+## 📖 Table of Contents
 
-In India, **80% of farmers** struggle to accurately identify crop diseases, leading to **30-40% annual yield losses** worth ₹50,000 crores. Rural farmers face barriers including:
-
-- ❌ Lack of agricultural experts (1:10,000 ratio)
-- 🌐 Language barriers (resources mostly in English)
-- ⏰ Delayed expert consultation
-- 💰 Expensive wrong treatments
-
-**KisanAI Sahayak** bridges this gap with AI-powered, voice-enabled crop disease detection in Hindi.
-
----
-
-## ✨ **Key Features**
-
-### 🔬 **AI-Powered Disease Detection**
-- **92% accuracy** using trained CNN model
-- **38+ disease classes** covering major Indian crops
-- **Real-time analysis** with confidence scoring
-- **Sub-3 second** response time
-
-### 🎤 **Vernacular Voice Interface**
-- **Hindi speech recognition** for questions
-- **Text-to-speech** solution delivery
-- **Voice-first design** for low-literacy users
-- **Browser-native** processing (no additional apps)
-
-### 🌱 **Smart Agricultural Solutions**
-- **Organic treatment** priorities
-- **Cost-effective** locally available remedies
-- **Step-by-step** instructions in Hindi
-- **Prevention tips** for future crops
-
-### 📱 **User-Friendly Design**
-- **Responsive design** for all devices
-- **Drag-and-drop** photo upload
-- **Progressive web app** capabilities
-- **Offline-ready** core functionality
+- [The Problem](#-the-problem)
+- [Our Solution](#-our-solution)
+- [✨ Key Features](#-key-features)
+- [⚙️ Technology Stack](#️-technology-stack)
+- [🚀 Getting Started](#-getting-started)
+- [🔧 How to Use](#-how-to-use)
+- [📂 Project Structure](#-project-structure)
+- [📈 Future Scope](#-future-scope)
+- [🤝 Our Team](#-our-team)
+- [📄 License](#-license)
 
 ---
 
-## 👥 **Team Members**
+## crisis The Problem
 
-| Name | Role | Contribution | Contact |
-|------|------|--------------|---------|
-| **Ansh Attre** | Project Lead & Backend | Flask development, AI integration, Gemini API | [ansh.attre@university.edu](mailto:ansh.attre@university.edu) |
-| **Priyanshu Sinha** | Frontend Developer | UI/UX design, responsive styling, animations | [priyanshu.sinha@university.edu](mailto:priyanshu.sinha@university.edu) |
-| **Anshu Mandal** | JavaScript Developer | Voice interface, Web APIs, frontend integration | [anshu.mandal@university.edu](mailto:anshu.mandal@university.edu) |
-| **Pragyansh Saxena** | ML Engineer | CNN model development, training, optimization | [pragyansh.saxena@university.edu](mailto:pragyansh.saxena@university.edu) |
-| **Jitendra** | QA Engineer | Testing, documentation, user feedback | [jitendra@university.edu](mailto:jitendra@university.edu) |
+Bharat mein, **70% aabadi krishi par nirbhar hai**, lekin **80% kisan fasal ki bimariyon ko sahi dhang se pehchan nahi paate**, jiske kaaran saalana **30-40% tak upaj ka nuksan** hota hai. Gramin kisanon ko kai badhaon ka samna karna padta hai, jaise krishi visheshagyon ki kami, bhasha ki samasya (kyunki adhikansh jaankari Angrezi mein hai), aur samay par salah na milna.
+
+Iske parinaamswarup, kisan galat keetnashakon ka istemal karte hain, jisse unhein arthik nuksan hota hai aur paryavaran ko bhi hani pahunchti hai. Ek AI-aadhaarit, sthaniya bhasha mein samadhan ki sakht zaroorat hai jo photo se turant bimari pehchan sake aur kisanon ko unki bhasha mein aasan aur prabhavi salah de sake.
 
 ---
 
-## 🛠️ **Technology Stack**
+## 💡 Our Solution
 
-<div align="center">
+**KisanAI Sahayak** ek smart web application hai jo is kami ko pura karne ke liye banaya gaya hai. Yeh kisanon ko ek saral tool pradan karta hai jisse ve:
+1.  Prabhavit fasal ki **photo upload** kar sakte hain.
+2.  Apni aawaz mein **Hindi mein sawal** puch sakte hain.
+3.  AI dwara turant **bimari ka pata** laga sakte hain aur vistaar se samadhan **text aur audio** dono mein prapt kar sakte hain.
 
-### **Backend**
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-
-### **Frontend**
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-### **AI & APIs**
-![Google AI](https://img.shields.io/badge/Gemini_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
-![Speech API](https://img.shields.io/badge/Web_Speech_API-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)
-
-</div>
+Hamara lakshya har kisan tak aadhunik krishi takneek ko pahunchana hai, chahe unki takneeki samajh kitni bhi ho.
 
 ---
 
-## 🚀 **Quick Start**
+## ✨ Key Features
 
-### **Prerequisites**
-- Python 3.8+
-- Modern web browser (Chrome/Edge recommended for voice features)
-- Internet connection for AI features
+-   **📸 Photo-Based Diagnosis:** TensorFlow-trained CNN model ka upyog karke 38 alag-alag paudhon ki bimariyon ki pehchan.
+-   **🎤 Vernacular Voice Interface:** Hindi bhasha mein sawal puchne ke liye Web Speech API ka integration.
+-   **🧠 Intelligent AI Solutions:** Google Gemini API ka upyog karke Hindi mein practical aur dynamic samadhan generate karna.
+-   **🔊 Text-to-Speech Output:** Samadhan ko Hindi mein padhkar sunana, jisse kam sakshar kisanon ko bhi fayda ho.
+-   **📱 Responsive & Modern UI:** HTML, CSS, aur JavaScript se bana ek saaf, saral aur mobile-friendly interface.
+-   **🆓 Free & Accessible:** Poori tarah se free-tier services aur open-source technologies par nirmit.
 
-### **Installation**
+---
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/kisanai-sahayak.git
-   cd kisanai-sahayak
+## ⚙️ Technology Stack
+
+| Component         | Technology                                                                                                |
+| ----------------- | --------------------------------------------------------------------------------------------------------- |
+| **Frontend**      | `HTML5`, `CSS3`, `JavaScript (ES6+)`                                                                      |
+| **Backend**       | `Python 3.8+`, `Flask`                                                                                    |
+| **AI/ML Model**   | `TensorFlow`, `Keras`, `Pillow`, `NumPy`                                                                  |
+| **Solution AI**   | `Google Gemini API`                                                                                       |
+| **Voice Tech**    | `Web Speech API` (Speech Recognition & Synthesis)                                                         |
+
+---
+
+## 🚀 Getting Started
+
+Apne local system par is project ko set up karne ke liye in instructions ko follow karein.
+
+### Prerequisites
+
+-   Python 3.8 ya usse naya version
+-   `pip` (Python package installer)
+-   Ek modern web browser jo microphone ko support karta ho (Chrome ya Edge recommended)
+
+### Installation and Setup
+
+1.  **Repository ko clone karein:**
+    ```bash
+    git clone https://github.com/your-username/kisanai-sahayak.git
+    cd kisanai-sahayak
+    ```
+
+2.  **Ek virtual environment banayein aur activate karein:**
+    ```bash
+    # macOS/Linux
+    python3 -m venv venv && source venv/bin/activate
+
+    # Windows
+    python -m venv venv && .\venv\Scripts\activate
+    ```
+
+3.  **Zaroori packages install karein:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **AI Model download karein:**
+    -   `models` naam ka ek folder banayein.
+    -   Pre-trained model (`plant_disease_model.h5`) ko download karke `models` folder ke andar rakhein.
+        ```bash
+        # Windows PowerShell
+        Invoke-WebRequest -Uri "https://huggingface.co/spaces/nateraw/plant-disease-classification/resolve/main/model.h5" -OutFile "models/plant_disease_model.h5"
+        ```
+
+5.  **Apni Gemini API Key set up karein:**
+    -   [Google AI Studio](https://makersuite.google.com/) se apni free API key prapt karein.
+    -   `app.py` file kholein aur `"YOUR_ACTUAL_GEMINI_API_KEY_HERE"` ko apni asli key se replace karein.
+
+6.  **Application run karein:**
+    ```bash
+    python app.py
+    ```
+
+7.  Apne browser mein `http://127.0.0.1:5000` par jayein.
+
+---
+
+## 🔧 How to Use
+
+1.  **Step 1: Photo Upload Karein** - Photo upload area par click karein aur prabhavit paudhe ki saaf tasveer chunein.
+2.  **Step 2: Sawal Record Karein** - "Record" button par click karein aur Hindi mein apna sawal puchein.
+3.  **Step 3: Samadhan Prapt Karein** - "AI se Samadhan Payein" button par click karein.
+4.  **Results Dekhein** - AI aapko bimari ka naam, vishvasniyata score, aur text mein vistaar se samadhan dega. Aap "Sunein" button par click karke samadhan sun bhi sakte hain.
+
+---
+
+## 📂 Project Structure
+
+```bash
+KisanAI-Sahayak/
+├── app.py                     # Main Flask application
+├── models/
+│   └── plant_disease_model.h5 # Pre-trained TensorFlow model
+├── static/
+│   ├── script.js            # Frontend JavaScript logic
+│   └── style.css            # CSS styles
+├── templates/
+│   └── index.html           # Main HTML page
+├── README.md                  # This file
+└── requirements.txt           # Python dependencies
